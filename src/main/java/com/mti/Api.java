@@ -1,4 +1,22 @@
 package com.mti;
 
-public class Api {
+import com.mti.presentation.UserController;
+
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
+import java.util.Set;
+
+@ApplicationPath("/api")
+public  class  Api extends Application {
+    @Override public Set<Class<?>> getClasses()  {
+        return  getRestResourceClasses();
+    }
+    private  Set<Class<?>>  getRestResourceClasses()  {
+        Set<Class<?>>  resources  =  new  java.util.HashSet<Class<?>>();
+        resources.add(UserController.class);
+        //resources.add(AnotherOne.class);
+        resources.add(ResponseCorsFilter.class);
+        return  resources;
+    }
 }
+
