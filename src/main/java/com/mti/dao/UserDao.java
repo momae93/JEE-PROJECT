@@ -1,4 +1,15 @@
 package com.mti.dao;
 
-public class UserDao {
+import com.mti.model.UserModel;
+
+import javax.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+public class UserDao extends AbstractDao<UserModel> {
+
+    public UserDao() {
+        super(UserModel.class);
+    }
+
+
 }

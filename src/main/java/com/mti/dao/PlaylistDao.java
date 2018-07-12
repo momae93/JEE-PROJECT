@@ -1,4 +1,9 @@
 package com.mti.dao;
 
-public class PlaylistDao {
+import com.mti.model.PlaylistModel;
+
+public class PlaylistDao extends AbstractDao<PlaylistModel> {
+    public PlaylistDao() {
+        super(PlaylistModel.class);
+    }
 }

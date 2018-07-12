@@ -1,4 +1,9 @@
 package com.mti.dao;
 
-public class VideoDao {
+import com.mti.model.VideoModel;
+
+public class VideoDao extends AbstractDao<VideoModel> {
+    public VideoDao() {
+        super(VideoModel.class);
+    }
 }
