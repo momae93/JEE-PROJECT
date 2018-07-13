@@ -26,7 +26,7 @@ public class UserService {
     }
 
     public User findById(final int id){
-        return userModelToEntityConverter.convert(userDao.findById(id));
+        return userModelToEntityConverter.convert(userDao.find(id));
     }
 
     @Transactional
