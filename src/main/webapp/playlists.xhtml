@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+</h:head>
+<h:body>
+    <div style="text-align: center">
+        <c:forEach items="${playlistController.getPlaylistByUserId(7)}" var="it">
+            <div style="border: solid 1px black; margin-bottom: 10px;">
+                <p>name : ${it.name}</p>
+                <h:link value="Voir" outcome="playlist">
+                    <f:param name="playlist" value="${it.token}" />
+                </h:link>
+            </div>
+        </c:forEach>
+    </div>
+</h:body>
+
+</html>
