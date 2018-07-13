@@ -25,6 +25,11 @@ public class PlaylistController {
     @Inject
     private PlaylistEntityToResponseConverter converter;
 
+    /**
+     * Return a response with the list of playlist of a user
+     * @param id Id of the user
+     * @return Return the list of playlists of the user
+     */
     @GET
     @Path("/user/{idUser}")
     public AllPlaylistByIdUserResponse getPlaylistByUserId(@PathParam("idUser") final Integer id) {

@@ -24,6 +24,11 @@ public class VideoController {
     @Inject
     private VideoEntityToAllByIdUserResponseConverter converter;
 
+    /**
+     * Get the list of video of a user
+     * @param id id of the user
+     * @return Return the list of video of the user
+     */
     @GET
     @Path("/user/{idUser}")
     public AllByIdUserResponse getVideoByUserId(@PathParam("idUser") final Integer id) {
@@ -35,6 +40,11 @@ public class VideoController {
 
     }
 
+    /**
+     * Get a video with a special token
+     * @param token the token of the video
+     * @return return a video
+     */
     @GET
     @Path("/token/{token}")
     public GetByTokenResponse getVideo(@PathParam("token") final String token) {
@@ -42,6 +52,11 @@ public class VideoController {
         return new GetByTokenResponse(video.getName(), video.getStreamLink(), video.getLikes().size());
     }
 
+    /**
+     * Get a video by id
+     * @param id the id of the video
+     * @return Return a video
+     */
     @GET
     @Path("/id/{id}")
     public Video getVideoId(@PathParam("id") final Integer id) {
@@ -49,6 +64,11 @@ public class VideoController {
         return video;
     }
 
+    /**
+     * Add video of a user
+     * @param request the video to upload
+     * @return return id of the video uploaded
+     */
     @POST
     public SaveResponse save(final SaveRequest request) {
         final Video video = new Video(null, request.getName(), request.getToken(), request.getStreamLink(), 1, null);
