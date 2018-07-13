@@ -3,6 +3,7 @@ import com.mti.converter.VideoEntityToAllByIdUserResponseConverter;
 import com.mti.entity.Like;
 import com.mti.entity.Video;
 import com.mti.presentation.videocontroller.AllByIdUserResponse;
+import com.mti.presentation.videocontroller.GetByTokenResponse;
 import com.mti.presentation.videocontroller.SaveRequest;
 import com.mti.presentation.videocontroller.SaveResponse;
 import com.mti.service.VideoService;
@@ -36,10 +37,10 @@ public class VideoController {
     }
 
     @GET
-    @Path("/{token}")
-    public Video getVideo(@PathParam("token") final String token) {
-        return token == null ? null : new Video(1, "Video Name", "jd9e4f-zy1hr-h5u6i-yz2di",
-                "www.stream.fr/video/djzif-ahdiz-dsqjkfs", null, null);
+    @Path("/token/{token}")
+    public GetByTokenResponse getVideo(@PathParam("token") final String token) {
+        final Video video = videoService.findByToken(token);
+        return new GetByTokenResponse(video.getName(), video.getStreamLink(), video.getLikes().size());
     }
 
     @GET

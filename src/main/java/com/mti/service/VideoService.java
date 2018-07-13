@@ -29,7 +29,12 @@ public class VideoService {
 
     public Video findById(final int id) {
        final VideoModel video = videoDao.find(id);
-       return (video == null) ? new Video() : videoModelToEntityConverter.convert(videoDao.find(id));
+       return (video == null) ? new Video() : videoModelToEntityConverter.convert(video);
+    }
+
+    public Video findByToken(final String token) {
+        final VideoModel video = videoDao.findByToken(token);
+        return (video == null) ? new Video() : videoModelToEntityConverter.convert(video);
     }
 
     @Transactional

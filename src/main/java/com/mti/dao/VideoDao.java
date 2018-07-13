@@ -18,4 +18,10 @@ public class VideoDao extends AbstractDao<VideoModel> {
         query.setParameter("id_user", id);
         return query.getResultList();
     }
+
+    public VideoModel findByToken(final String token) {
+        final TypedQuery<VideoModel> query = entityManager.createQuery("FROM VideoModel v WHERE v.token = :token", VideoModel.class);
+        query.setParameter("token", token);
+        return query.getSingleResult();
+    }
 }
