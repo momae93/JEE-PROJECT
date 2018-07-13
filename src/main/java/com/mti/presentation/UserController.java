@@ -23,7 +23,7 @@ public class UserController {
 
     @POST
     public SaveResponse save(final SaveRequest request) {
-        final User user = new User(null, request.getUsername(), request.getPassword(), true);
+        final User user = new User(null, request.getUsername(), request.getPassword(), true, null);
         final User res = userService.save(user);
         return new SaveResponse(res.getId(), res.getUsername(), res.getPassword(), res.getIsActive());
     }

@@ -20,7 +20,7 @@ public class User {
 
     private Boolean isActive;
 
-    //private List<Playlist> playlists;
+    private List<Playlist> playlists;
 
     //private List<Video> videos;
 

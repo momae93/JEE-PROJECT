@@ -20,7 +20,6 @@ import javax.validation.constraints.Size;
 public class PlaylistModel {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -34,9 +33,11 @@ public class PlaylistModel {
     @Size(max = 45)
     private String token;
 
-    @Column(name = "id_user")
+    @ManyToOne
     @NotNull
-    private Integer id_user;
+    @JoinColumn(name = "id_user", referencedColumnName = "id")
+    private UserModel owner;
+
     //FIXME: Annotations.
     //private User owner;
 

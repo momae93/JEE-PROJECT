@@ -19,6 +19,6 @@ public class PlaylistService {
 
     public List<Playlist> findByUserId(final int id) {
         return playlistModelToEntityConverter.convert(playlistDao.findAll().stream()
-                .filter(it -> it.getId_user() == id).collect(Collectors.toList()));
+                .filter(it -> it.getOwner().getId() == id).collect(Collectors.toList()));
     }
 }

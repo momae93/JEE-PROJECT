@@ -40,9 +40,10 @@ public class UserModel {
     @NotNull
     private Boolean isActive;
 
-    // FIXME: Annotations.
-    
-    //private List<Playlist> playlists;
+
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PlaylistModel> playlists;
+
     //private List<Video> videos;
     //private List<User> friends;
 
