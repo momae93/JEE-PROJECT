@@ -2,10 +2,7 @@ package com.mti.presentation;
 
 import com.mti.converter.user.UserEntityToResponseConverter;
 import com.mti.entity.User;
-import com.mti.presentation.usercontroller.GetAllResponse;
-import com.mti.presentation.usercontroller.GetByIdResponse;
-import com.mti.presentation.usercontroller.SaveRequest;
-import com.mti.presentation.usercontroller.SaveResponse;
+import com.mti.presentation.usercontroller.*;
 import com.mti.service.UserService;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -45,5 +42,13 @@ public class UserController {
     public GetAllResponse all(){
         final List<User> users = userService.findAll();
         return new GetAllResponse(converter.convert(users));
+    }
+
+    @PUT
+    @Path("")
+    public DisableResponse disable(DisableRequest request){
+        final User user = userService.findById(request.getId());
+        final User res = userService.disable(user);
+        return new DisableResponse(res.getId(), res.getUsername(), res.getPassword(), res.getIsActive());
     }
 }

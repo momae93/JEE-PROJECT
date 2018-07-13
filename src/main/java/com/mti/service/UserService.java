@@ -7,7 +7,6 @@ import com.mti.entity.User;
 import com.mti.model.UserModel;
 
 import javax.inject.Inject;
-import javax.print.attribute.standard.Media;
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -33,6 +32,14 @@ public class UserService {
     @Transactional
     public User save(final User user){
         final UserModel model = userEntityToModelConverter.convert(user);
+        final UserModel result = userDao.save(model);
+        return userModelToEntityConverter.convert(result);
+    }
+
+    @Transactional
+    public User disable(final User user){
+        final UserModel model = userEntityToModelConverter.convert(user);
+        model.setIsActive(false);
         final UserModel result = userDao.save(model);
         return userModelToEntityConverter.convert(result);
     }
