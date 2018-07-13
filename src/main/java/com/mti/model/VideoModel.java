@@ -36,5 +36,5 @@ public class VideoModel {
     private String streamLink;
 
     // FIXME
-    private User owner;
+   // private User owner;
 }

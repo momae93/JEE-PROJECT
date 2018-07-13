@@ -10,7 +10,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@ToString
+/*@ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -34,4 +34,4 @@ public class PlaylistModel {
     //FIXME: Annotations.
     private User owner;
 
-}
+}*/
