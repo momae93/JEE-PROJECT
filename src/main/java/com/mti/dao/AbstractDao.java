@@ -28,10 +28,5 @@ public class AbstractDao<MODEL_TYPE> {
         final TypedQuery<MODEL_TYPE> query = entityManager.createQuery("FROM " + modelClass.getSimpleName(), modelClass);
         return query.getResultList();
     }
-
-    public MODEL_TYPE findById(int id) {
-        return entityManager.find(modelClass, id);
-    }
-
 }
 
