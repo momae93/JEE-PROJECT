@@ -35,7 +35,9 @@ public class UserController {
     @Path("/{idUser}")
     public GetByIdResponse getByIdUser(@PathParam("idUser") final Integer id) {
         final User user = userService.findById(id);
-        return new GetByIdResponse(user.getId(), user.getUsername(), user.getPassword(), user.getIsActive());
+        return (user != null) ?
+                new GetByIdResponse(user.getId(), user.getUsername(), user.getPassword(), user.getIsActive())
+                : new GetByIdResponse();
     }
 
     @GET
