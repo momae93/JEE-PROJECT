@@ -22,7 +22,6 @@ import java.util.List;
 public class UserModel {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

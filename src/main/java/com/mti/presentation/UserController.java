@@ -5,7 +5,8 @@ import com.mti.entity.User;
 import com.mti.entity.Video;
 import com.mti.presentation.usercontroller.GetAllResponse;
 import com.mti.presentation.usercontroller.GetByIdResponse;
-import com.mti.presentation.videocontroller.AllByIdUserResponse;
+import com.mti.presentation.usercontroller.SaveRequest;
+import com.mti.presentation.usercontroller.SaveResponse;
 import com.mti.service.UserService;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -24,18 +25,13 @@ public class UserController {
 
     @Inject
     private UserEntityToAllResponseConverter converter;
-/*
-    @POST
-    public SaveResponse save(final SaveRequest request){
-        final List<MediaFile> files = request.getFiles().stream()
-                .map(it -> new MediaFile(null, it.getPath(), it.getFormat(), null))
-                .collect(Collectors.toList());
-        final Media media = new Media(null, request.getName(), request.getDescription());
-        final Media result = userService.save(media);
-        return new SaveResponse(result.id);
-    }
-*/
 
+    @POST
+    public SaveResponse save(final SaveRequest request) {
+        final User user = new User(null, request.getUsername(), request.getPassword(), request.getIsActive());
+        final User res = userService.save(user);
+        return new SaveResponse(res.getId(), res.getUsername(), res.getPassword(), res.getIsActive());
+    }
 
     @GET
     @Path("/{idUser}")
