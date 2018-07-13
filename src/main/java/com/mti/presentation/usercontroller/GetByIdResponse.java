@@ -8,11 +8,22 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GetByIdResponse {
+    /**
+     * Id.
+     */
     public Integer id;
-
+    /**
+     * Username.
+     */
     public String username;
 
+    /**
+     * Password.
+     */
     public String password;
 
+    /**
+     * Active or not.
+     */
     public Boolean isActive;
 }

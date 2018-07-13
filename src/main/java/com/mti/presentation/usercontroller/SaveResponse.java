@@ -8,8 +8,24 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SaveResponse {
+
+    /**
+     * Id.
+     */
     private Integer id;
+
+    /**
+     * Username.
+     */
     private String username;
+
+    /**
+     * Password.
+     */
     private String password;
+
+    /**
+     * Active or not.
+     */
     private Boolean isActive;
 }

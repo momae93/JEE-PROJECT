@@ -19,26 +19,35 @@ import javax.validation.constraints.Size;
 @Table(name = "playlist")
 public class PlaylistModel {
 
+    /**
+     * Id.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    /**
+     * Name of the playlist.
+     */
     @Column(name = "name")
     @NotNull
     @Size(max = 45)
     private String name;
 
+    /**
+     * Token of the playlist.
+     */
     @Column(name = "token")
     @NotNull
     @Size(max = 45)
     private String token;
 
+    /**
+     * Owner of the playlist.
+     */
     @ManyToOne
     @NotNull
     @JoinColumn(name = "id_user", referencedColumnName = "id")
     private UserModel owner;
-
-    //FIXME: Annotations.
-    //private User owner;
 
 }

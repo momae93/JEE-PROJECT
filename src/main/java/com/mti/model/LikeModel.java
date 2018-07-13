@@ -1,8 +1,6 @@
 package com.mti.model;
 
 
-import com.mti.entity.User;
-import com.mti.entity.Video;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,15 +17,23 @@ import javax.validation.constraints.NotNull;
 @Table(name = "user_like_video")
 public class LikeModel {
 
+    /**
+     * Id.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-
+    /**
+     * User id.
+     */
     @Column(name = "id_user")
     @NotNull
     private Integer id_user;
 
+    /**
+     * Video that is liked.
+     */
     @ManyToOne
     @NotNull
     @JoinColumn(name = "id_video", referencedColumnName = "id")

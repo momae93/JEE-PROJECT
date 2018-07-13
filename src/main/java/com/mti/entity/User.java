@@ -12,17 +12,28 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
 
+    /**
+     * Id.
+     */
     private Integer id;
 
+    /**
+     * Username.
+     */
     private String username;
 
+    /**
+     * Password.
+     */
     private String password;
 
+    /**
+     * Account activated or not.
+     */
     private Boolean isActive;
 
+    /**
+     * List of playlists.
+     */
     private List<Playlist> playlists;
-
-    //private List<Video> videos;
-
-    //private List<User> friends;
 }

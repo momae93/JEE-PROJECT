@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DisableRequest {
+    /**
+     * Id.
+     */
     private Integer id;
 }
 
