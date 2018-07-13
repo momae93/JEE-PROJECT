@@ -3,11 +3,10 @@ package com.mti.converter;
 import com.mti.entity.Playlist;
 import com.mti.entity.User;
 import com.mti.entity.Video;
-import com.mti.model.UserModel;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+/*
 public class UserModelToEntityConverter implements Converter<UserModel, User> {
     @Override
     public User convert(final UserModel from) {
@@ -28,3 +27,4 @@ public class UserModelToEntityConverter implements Converter<UserModel, User> {
                 from.getPassword(), from.getIsActive(), playlists, videos, friends);
     }
 }
+*/
