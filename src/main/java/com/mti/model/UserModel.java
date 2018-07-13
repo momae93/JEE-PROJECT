@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.List;
 
-/*@ToString
+@ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -39,12 +39,12 @@ public class UserModel {
 
     @Column(name = "isActive")
     @NotNull
-    private Integer isActive;
+    private Boolean isActive;
 
     // FIXME: Annotations.
     
-    private List<Playlist> playlists;
-    private List<Video> videos;
-    private List<User> friends;
+    //private List<Playlist> playlists;
+    //private List<Video> videos;
+    //private List<User> friends;
 
-}*/
+}

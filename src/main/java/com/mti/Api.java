@@ -1,5 +1,6 @@
 package com.mti;
 
+import com.mti.presentation.UserController;
 import com.mti.presentation.VideoController;
 
 import javax.ws.rs.ApplicationPath;
@@ -14,6 +15,7 @@ public  class  Api extends Application {
     private  Set<Class<?>>  getRestResourceClasses()  {
         Set<Class<?>>  resources  =  new  java.util.HashSet<Class<?>>();
         resources.add(VideoController.class);
+        resources.add(UserController.class);
         //resources.add(AnotherOne.class);
         resources.add(ResponseCorsFilter.class);
         return  resources;

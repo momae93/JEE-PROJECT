@@ -18,11 +18,11 @@ public class User {
 
     private String password;
 
-    private Integer isActive;
+    private Boolean isActive;
 
-    private List<Playlist> playlists;
+    //private List<Playlist> playlists;
 
-    private List<Video> videos;
+    //private List<Video> videos;
 
-    private List<User> friends;
+    //private List<User> friends;
 }

@@ -1,4 +1,38 @@
 package com.mti.service;
 
+import com.mti.converter.user.UserEntityToModelConverter;
+import com.mti.converter.user.UserModelToEntityConverter;
+import com.mti.dao.UserDao;
+import com.mti.entity.User;
+import com.mti.model.UserModel;
+
+import javax.inject.Inject;
+import javax.print.attribute.standard.Media;
+import javax.transaction.Transactional;
+import java.util.List;
+
 public class UserService {
+    @Inject
+    private UserDao userDao;
+
+    @Inject
+    private UserModelToEntityConverter userModelToEntityConverter;
+
+    @Inject
+    private UserEntityToModelConverter userEntityToModelConverter;
+
+    public List<User> findAll(){
+        return userModelToEntityConverter.convert(userDao.findAll());
+    }
+
+    public User findById(final int id){
+        return userModelToEntityConverter.convert(userDao.findById(id));
+    }
+
+    @Transactional
+    public User save(final User user){
+        final UserModel model = userEntityToModelConverter.convert(user);
+        final UserModel result = userDao.save(model);
+        return userModelToEntityConverter.convert(result);
+    }
 }
