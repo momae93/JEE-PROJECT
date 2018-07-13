@@ -1,8 +1,7 @@
 package com.mti.presentation;
 
-import com.mti.converter.user.UserEntityToAllResponseConverter;
+import com.mti.converter.user.UserEntityToResponseConverter;
 import com.mti.entity.User;
-import com.mti.entity.Video;
 import com.mti.presentation.usercontroller.GetAllResponse;
 import com.mti.presentation.usercontroller.GetByIdResponse;
 import com.mti.presentation.usercontroller.SaveRequest;
@@ -13,7 +12,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @ApplicationScoped
 @Path("/user")
@@ -24,7 +22,7 @@ public class UserController {
     private UserService userService;
 
     @Inject
-    private UserEntityToAllResponseConverter converter;
+    private UserEntityToResponseConverter converter;
 
     @POST
     public SaveResponse save(final SaveRequest request) {
@@ -35,7 +33,7 @@ public class UserController {
 
     @GET
     @Path("/{idUser}")
-    public GetByIdResponse getVideoByUserId(@PathParam("idUser") final Integer id) {
+    public GetByIdResponse getByIdUser(@PathParam("idUser") final Integer id) {
         final User user = userService.findById(id);
         return new GetByIdResponse(user.getId(), user.getUsername(), user.getPassword(), user.getIsActive());
     }
@@ -43,10 +41,7 @@ public class UserController {
     @GET
     @Path("")
     public GetAllResponse all(){
-        final List<User> medias = userService.findAll();
-        final List<GetAllResponse.UserResponse> responses = medias.stream()
-                .map(converter::convert)
-                .collect(Collectors.toList());
-        return new GetAllResponse(responses);
+        final List<User> users = userService.findAll();
+        return new GetAllResponse(converter.convert(users));
     }
 }
