@@ -12,7 +12,7 @@ public class Like {
 
     private Integer id;
 
-    private User user;
+    private Integer id_user;
 
     private Video video;
 

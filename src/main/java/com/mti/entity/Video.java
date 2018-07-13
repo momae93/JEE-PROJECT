@@ -20,5 +20,7 @@ public class Video {
     private String streamLink;
 
     private Integer id_user;
+    
+    private List<Like> likes;
 
 }

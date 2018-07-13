@@ -1,6 +1,5 @@
 package com.mti.model;
 
-import com.mti.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,8 +33,10 @@ public class VideoModel {
     @NotNull
     private String streamLink;
 
-    // FIXME
     @Column(name = "id_user")
     @NotNull
     private Integer id_user;
+
+    @OneToMany(mappedBy = "video", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<LikeModel> likes;
 }

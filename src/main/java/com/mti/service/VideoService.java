@@ -27,6 +27,11 @@ public class VideoService {
         return videoModelToEntityConverter.convert(videoDao.findByUserId(id));
     }
 
+    public Video findById(final int id) {
+       final VideoModel video = videoDao.find(id);
+       return (video == null) ? new Video() : videoModelToEntityConverter.convert(videoDao.find(id));
+    }
+
     @Transactional
     public Video save(final Video video) {
         final VideoModel model = videoEntityToModelConverter.convert(video);

@@ -11,21 +11,26 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-/*@ToString
+@ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "like")
+@Table(name = "user_like_video")
 public class LikeModel {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private User user;
 
-    private Video video;
+    @Column(name = "id_user")
+    @NotNull
+    private Integer id_user;
 
-}*/
+    @ManyToOne
+    @NotNull
+    @JoinColumn(name = "id_video", referencedColumnName = "id")
+    private VideoModel video;
+
+}
