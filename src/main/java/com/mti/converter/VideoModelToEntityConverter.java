@@ -3,8 +3,6 @@ package com.mti.converter;
 import com.mti.entity.Video;
 import com.mti.model.VideoModel;
 
-import java.util.List;
-
 public class VideoModelToEntityConverter implements Converter<VideoModel,Video> {
 
     @Override
