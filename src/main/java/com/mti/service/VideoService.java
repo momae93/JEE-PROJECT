@@ -1,7 +1,7 @@
 package com.mti.service;
 
-import com.mti.converter.VideoEntityToModelConverter;
-import com.mti.converter.VideoModelToEntityConverter;
+import com.mti.converter.video.VideoEntityToModelConverter;
+import com.mti.converter.video.VideoModelToEntityConverter;
 import com.mti.dao.VideoDao;
 import com.mti.entity.Video;
 import com.mti.model.VideoModel;

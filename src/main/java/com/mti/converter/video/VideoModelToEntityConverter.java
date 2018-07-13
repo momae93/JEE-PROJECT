@@ -1,5 +1,6 @@
-package com.mti.converter;
+package com.mti.converter.video;
 
+import com.mti.converter.Converter;
 import com.mti.entity.Like;
 import com.mti.entity.Video;
 import com.mti.model.VideoModel;
@@ -7,6 +8,9 @@ import com.mti.model.VideoModel;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Converter : Video model to User entity
+ */
 public class VideoModelToEntityConverter implements Converter<VideoModel,Video> {
 
     @Override

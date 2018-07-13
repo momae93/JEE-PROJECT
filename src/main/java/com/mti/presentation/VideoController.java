@@ -1,6 +1,5 @@
 package com.mti.presentation;
-import com.mti.converter.VideoEntityToAllByIdUserResponseConverter;
-import com.mti.entity.Like;
+import com.mti.converter.video.VideoEntityToAllByIdUserResponseConverter;
 import com.mti.entity.Video;
 import com.mti.presentation.videocontroller.AllByIdUserResponse;
 import com.mti.presentation.videocontroller.GetByTokenResponse;

@@ -4,6 +4,9 @@ import com.mti.converter.Converter;
 import com.mti.entity.User;
 import com.mti.model.UserModel;
 
+/**
+ * Converter : User model to User entity
+ */
 public class UserModelToEntityConverter implements Converter<UserModel, User> {
     @Override
     public User convert(UserModel from) {
