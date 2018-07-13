@@ -14,7 +14,7 @@ public class VideoDao extends AbstractDao<VideoModel> {
 
 
     public List<VideoModel> findByUserId(final int id) {
-        final TypedQuery<VideoModel> query = entityManager.createQuery("FROM Video v WHERE v.id_user = :id_user", VideoModel.class);
+        final TypedQuery<VideoModel> query = entityManager.createQuery("FROM VideoModel v WHERE v.id_user = :id_user", VideoModel.class);
         query.setParameter("id_user", id);
         return query.getResultList();
     }

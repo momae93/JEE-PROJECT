@@ -36,5 +36,7 @@ public class VideoModel {
     private String streamLink;
 
     // FIXME
-   // private User owner;
+    @Column(name = "id_user")
+    @NotNull
+    private Integer id_user;
 }

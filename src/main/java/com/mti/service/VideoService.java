@@ -19,7 +19,7 @@ public class VideoService {
 
 
     public List<Video> findByUserId(final int id) {
-        return null;
+        return videoModelToEntityConverter.convert(videoDao.findByUserId(id));
     }
 
 }

@@ -19,6 +19,6 @@ public class Video {
 
     private String streamLink;
 
-    private User owner;
+    private Integer id_user;
 
 }

@@ -11,7 +11,7 @@ public class VideoModelToEntityConverter implements Converter<VideoModel,Video> 
     public Video convert(VideoModel from) {
 
         return new Video(from.getId(), from.getName(),
-                from.getToken(), from.getStreamLink(), null) ;
+                from.getToken(), from.getStreamLink(), from.getId_user()) ;
     }
 
 }
