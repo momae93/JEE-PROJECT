@@ -7,7 +7,7 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.Set;
 
-@ApplicationPath("/api")
+@ApplicationPath("")
 public  class  Api extends Application {
     @Override public Set<Class<?>> getClasses()  {
         return  getRestResourceClasses();
