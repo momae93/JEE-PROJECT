@@ -22,5 +22,4 @@ public class Video {
     private Integer id_user;
     
     private List<Like> likes;
-
 }

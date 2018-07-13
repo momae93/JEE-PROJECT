@@ -14,6 +14,5 @@ public class Like {
 
     private Integer id_user;
 
-    private Video video;
-
+    private Integer id_video;
 }

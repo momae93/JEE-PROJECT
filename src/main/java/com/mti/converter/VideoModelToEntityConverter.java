@@ -12,10 +12,9 @@ public class VideoModelToEntityConverter implements Converter<VideoModel,Video> 
     @Override
     public Video convert(VideoModel from) {
         final List<Like> likes = from.getLikes().stream()
-                .map(it -> new Like(null, it.getId_user(), null))
+                .map(it -> new Like(it.getId(), it.getId_user(), it.getVideo().getId()))
                 .collect(Collectors.toList());
         return new Video(from.getId(), from.getName(),
                 from.getToken(), from.getStreamLink(), from.getId_user(), likes);
     }
-
 }
