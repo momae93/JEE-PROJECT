@@ -17,8 +17,6 @@ import java.util.stream.Collectors;
 @Consumes("application/json")
 @Produces("application/json")
 public class VideoController {
-
-
     @Inject
     private VideoService videoService;
 

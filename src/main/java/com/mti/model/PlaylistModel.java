@@ -9,8 +9,9 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-/*@ToString
+@ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,13 +26,18 @@ public class PlaylistModel {
 
     @Column(name = "name")
     @NotNull
+    @Size(max = 45)
     private String name;
 
     @Column(name = "token")
     @NotNull
+    @Size(max = 45)
     private String token;
 
+    @Column(name = "id_user")
+    @NotNull
+    private Integer id_user;
     //FIXME: Annotations.
-    private User owner;
+    //private User owner;
 
-}*/
+}
