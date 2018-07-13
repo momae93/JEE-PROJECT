@@ -1,24 +1,19 @@
 package com.mti.entity;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Video {
+public class Like {
 
     private Integer id;
 
-    private String name;
+    private User user;
 
-    private String token;
-
-    private String streamLink;
-
-    private User owner;
+    private Video video;
 
 }

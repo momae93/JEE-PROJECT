@@ -1,6 +1,8 @@
 package com.mti.model;
 
+
 import com.mti.entity.User;
+import com.mti.entity.Video;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,33 +10,22 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @ToString
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "video")
-public class VideoModel {
+@Table(name = "like")
+public class LikeModel {
 
     @Id
     @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "name")
-    @NotNull
-    private String name;
+    private User user;
 
-    @Column(name = "token")
-    @NotNull
-    private String token;
+    private Video video;
 
-    @Column(name = "streamLink")
-    @NotNull
-    private String streamLink;
-
-    // FIXME
-    private User owner;
 }
