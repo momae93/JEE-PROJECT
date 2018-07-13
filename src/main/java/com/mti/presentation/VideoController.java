@@ -2,6 +2,8 @@ package com.mti.presentation;
 import com.mti.converter.VideoEntityToAllByIdUserResponseConverter;
 import com.mti.entity.Video;
 import com.mti.presentation.videocontroller.AllByIdUserResponse;
+import com.mti.presentation.videocontroller.SaveRequest;
+import com.mti.presentation.videocontroller.SaveResponse;
 import com.mti.service.VideoService;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -39,5 +41,12 @@ public class VideoController {
     public Video getVideo(@PathParam("token") final String token) {
         return token == null ? null : new Video(1, "Video Name", "jd9e4f-zy1hr-h5u6i-yz2di",
                 "www.stream.fr/video/djzif-ahdiz-dsqjkfs", null);
+    }
+
+    @POST
+    public SaveResponse save(final SaveRequest request) {
+        final Video video = new Video(null, request.getName(), request.getToken(), request.getStreamLink(), 1);
+        final Video res = videoService.save(video);
+        return new SaveResponse(res.getId());
     }
 }

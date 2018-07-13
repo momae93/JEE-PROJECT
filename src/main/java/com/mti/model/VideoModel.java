@@ -19,7 +19,6 @@ import java.util.List;
 public class VideoModel {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 

@@ -1,6 +1,5 @@
 package com.mti;
 
-import com.mti.presentation.UserController;
 import com.mti.presentation.VideoController;
 
 import javax.ws.rs.ApplicationPath;
